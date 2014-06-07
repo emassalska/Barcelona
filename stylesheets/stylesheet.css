@@ -60,6 +60,7 @@ img.obrazekResponsywny {
     padding: 10px;
     max-width: 100%;
     max-height: 100%;
+    clear: both;
 }
 
 table {
@@ -208,3 +209,36 @@ table {
         -webkit-transform: rotate(360deg);
     }
 }
+
+
+.menu {
+    background-color: #666666;
+    font-size: medium;
+    width: 100%;
+    display: block;
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    border-top-color: #808080;
+    border-bottom-color: #808080;
+}
+
+    .menu div {
+        border: thin solid #808080;
+        float: left;
+        color: #FFFFFF;
+        margin: 5px;
+        padding: 3px;
+        box-shadow: 0px 0px 2px 2px #808080;
+    }
+
+        .menu div a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }

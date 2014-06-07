@@ -25,12 +25,14 @@
             <div id="rodzic">
                 <span>B</span><span>A</span><span>R</span><span>C</span><span>E</span><span>L</span><span>O</span><span>N</span><span>A</span>
             </div>
-            <div>
-                WITAJ! Jesteś na tej stronie po raz <span id="licznik_odwiedzin">1</span>
-            </div>
-            <h2 id="project_tagline"></h2>
         </header>
-        <div style="width: 300px; max-width: 100%;">
+        <div class="menu">
+            <div><a href="http://emassalska.github.io/" title="Powrót do bloga">BLOG</a></div>
+            <div>Jesteś na tej stronie po raz <span id="licznik_odwiedzin">1</span></div>
+        </div>
+
+
+        <div style="width: 300px; max-width: 100%; clear: both; float:left;">
             <a href="http://www.accuweather.com/pl/es/barcelona/307297/weather-forecast/307297" class="aw-widget-legal"></a>
             <div id="awcc1397647766418" class="aw-widget-current" data-locationkey="307297" data-unit="c" data-language="pl" data-useip="false" data-uid="awcc1397647766418"></div>
         </div>
@@ -156,8 +158,8 @@ Ten kilometrowej długości deptak w dzielnicy Barri Gòtic prowadzi od Plaça d
 
             localforage.setItem('licznik', value, function () {
                 console.log("Licznik zostal zwiekszony do: ", value);
+            });
         });
-        }) ;
 
 
     </script>
