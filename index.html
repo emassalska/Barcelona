@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
+    <script type="text/javascript" src="localforage.min.js"></script>
     <title>emassalska</title>
 </head>
 
@@ -24,14 +25,15 @@
             <div id="rodzic">
                 <span>B</span><span>A</span><span>R</span><span>C</span><span>E</span><span>L</span><span>O</span><span>N</span><span>A</span>
             </div>
-
+            <div>
+                WITAJ! Jesteś na tej stronie po raz <span id="licznik_odwiedzin">1</span>
+            </div>
             <h2 id="project_tagline"></h2>
         </header>
         <div style="width: 300px; max-width: 100%;">
             <a href="http://www.accuweather.com/pl/es/barcelona/307297/weather-forecast/307297" class="aw-widget-legal"></a>
             <div id="awcc1397647766418" class="aw-widget-current" data-locationkey="307297" data-unit="c" data-language="pl" data-useip="false" data-uid="awcc1397647766418"></div>
         </div>
-
         <div id="innerContent">
 
             <h3>Co warto zobaczyć w Barcelonie ?</h3>
@@ -136,6 +138,27 @@ Ten kilometrowej długości deptak w dzielnicy Barri Gòtic prowadzi od Plaça d
         }
 
         map.on('click', onMapClick);
+
+
+        //obsluga localforage
+
+        localforage.getItem('licznik', function (value) {
+            if (value == null) {
+                console.log("Inicjalizacja licznika wartoscia 1");
+                value = 1;
+            }
+            else {
+                console.log("Licznik wynosi: ", value);
+                value++;
+            }
+            var licznik = document.getElementById('licznik_odwiedzin');
+            licznik.innerHTML = value;
+
+            localforage.setItem('licznik', value, function () {
+                console.log("Licznik zostal zwiekszony do: ", value);
+        });
+        }) ;
+
 
     </script>
 
